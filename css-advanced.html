@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+        <title>CSS advanced</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css-advanced.css">
+        <meta name="description" content="CCS advanced">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body class="page-container">
+
+     <!----------------  HEADER  --------------------->
+      <header>
+        <div class="header-container">
+          <h4>CSS advanced</h4>
+          <ul class="nav nav-tabs"> <!--Nav-tabs-->
+            <li class="active"><a class="ize" data-toggle="tab" href="#transform">Transforms</a></li>
+            <li><a class="ize" data-toggle="tab" href="#transition">Transitions</a></li>
+            <li><a class="ize" data-toggle="tab" href="#animation">Animations</a></li>
+          </ul>
+        </div>
+      </header>
+
+
+      <!------------------  MAIN  --------------------->      
+      <main class="tab-content container">
+
+
+        <!-------------  TRANSFORM SECTION  ------------->
+        <section id="transform" class="tab-pane fade in active">
+          <h1>CSS Transforms</h1>
+
+
+          <!----  2D Transform block   ---->
+          <div class="container-fluid">
+            <h2>2D Transforms</h2>
+            <p>CSS transforms allow you to move, rotate, scale, and skew elements.</p>
+
+            <div class="row">
+              <!------  Translate block  -------->
+              <div class="container-fluid container-2d col-lg-2 col-lg-offset-1 col-sm-4 col-xs-12">
+                <h3>The translate() Method</h3> 
+
+                <div id="translatediv" class="examplediv">
+                  <p>translate</p>
+                </div>
+            
+                <!-- Modal button-->
+                <div class="container modal-container">
+                  <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#syntax-translate">Syntax</button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="syntax-translate" role="dialog">
+                  <div class="modal-dialog">
+                      
+                    <!---  Modal content  ---->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       <h4 class="modal-title">Translate syntax</h4>
+                      </div>
+                      <div class="modal-body">
+                        <code>div {transform: translate(5px, 5px);}</code>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+                  </div>
+                </div>
+                <p>This div element is moved 5 pixels to the right, and 5 pixels down from its current position.</p>
+                <button type="button" class="btn btn-block btn-info" data-toggle="collapse" data-target="#translate-description">Learn</button>
+                <div id="translate-description" class="collapse">
+                  <p>The translate() method moves an element from its current position (according to the parameters given for the X-axis and the Y-axis).</p>
+                </div>
+              </div>
+
+
+              <!-------  Rotate block  ---------->
+              <div class="container-fluid container-2d col-lg-2 col-sm-4 col-xs-12">
+                <h3>The rotate() Method</h3>
+
+                <div id="rotatediv" class="examplediv">
+                  <p>rotate</p>
+                </div>
+
+                <!-- Modal button-->
+                <div class="container modal-container">
+                  <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#syntax-rotate">Syntax</button>
+                                     
+                  <!-- Modal -->
+                  <div class="modal fade" id="syntax-rotate" role="dialog">
+                    <div class="modal-dialog">
+                                        
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Rotate syntax</h4>
+                        </div>
+                        <div class="modal-body">
+                          <code>div {transform: rotate(5deg);}</code>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <p>This div element is rotated clockwise 5 degrees.</p>
+                <button type="button" class="btn btn-block btn-info" id="btn-learn" data-toggle="collapse" data-target="#rotate-description">Learn</button>
+                <div id="rotate-description" class="collapse">
+                  <p>The rotate() method rotates an element clockwise or counter-clockwise according to a given degree.</p>
+                </div>
+              </div>
+
+
+              <!--------  Scale block  ---------->
+              <div class="container-fluid container-2d col-lg-2 col-sm-4 col-xs-12">
+                <h3>The scale() Method</h3>
+
+                <div id="scalediv" class="examplediv">
+                  <p>scale</p>
+                </div>
+
+                <!-- Modal button-->
+                <div class="container modal-container">
+                  <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#syntax-scale">Syntax</button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="syntax-scale" role="dialog">
+                    <div class="modal-dialog">
+                      
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Scale syntax</h4>
+                        </div>
+                        <div class="modal-body">
+                          <code>div {transform: scale(1,1.5);}</code>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                        
+                    </div>
+                  </div>
+
+                </div>
+                <p>This div element is original width, and 1.5 times of its original height.</p>
+                <button type="button" class="btn btn-block btn-info" data-toggle="collapse" data-target="#scale-description">Learn</button>
+                <div id="scale-description" class="collapse">
+                  <p>The scale() method increases or decreases the size of an element (according to the parameters given for the width and height).</p>
+                  <p>The scaleX() method increases or decreases the width of an element.</p>
+                  <p>The scaleY() method increases or decreases the height of an element.</p>
+                </div>
+              </div>
+
+
+              <!---------  Skew block  ---------->
+              <div class="container-fluid container-2d col-lg-2 col-sm-4 col-xs-12">
+                <h3>The skew() Method</h3>
+
+                <div id="skewdiv" class="examplediv">
+                  <p>skew</p>
+                </div>
+
+                <!-- Modal button-->
+                <div class="container modal-container">
+                  <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#syntax-skew">Syntax</button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="syntax-skew" role="dialog">
+                    <div class="modal-dialog">
+                      
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Skew syntax</h4>
+                        </div>
+                        <div class="modal-body">
+                          <code>div {transform: skew(10deg,10deg);}</code>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                        
+                    </div>
+                  </div>
+                    
+                </div>
+                <p>This div element is skewed 10 degrees along the X-axis, and 10 degrees along the Y-axis.</p>         
+                <button type="button" class="btn btn-block btn-info" data-toggle="collapse" data-target="#skew-description">Learn</button>
+                <div id="skew-description" class="collapse">
+                <p>The skew() method skews an element along the X and Y-axis by the given angles.</p>
+                <p>The skewX() method skews an element along the X-axis by the given angle.</p>
+                <p>The skewY() method skews an element along the Y-axis by the given angle.</p>
+                </div>
+              </div>
+            
+
+              <!--------  Matrix block  --------->
+              <div class="container-fluid container-2d col-lg-2 col-sm-4 col-xs-12">
+                <h3>The matrix() Method</h3>
+
+                <div id="matrixdiv" class="examplediv">
+                  <p>matrix</p>
+                </div>
+
+                <!-- Modal button-->
+                <div class="container modal-container">
+                  <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#syntax-matrix">Syntax</button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="syntax-matrix" role="dialog">
+                    <div class="modal-dialog">
+                        
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Matrix syntax</h4>
+                        </div>
+                        <div class="modal-body">
+                          <code>div {transform: matrix(1, -0.3, 0, 1, 0, 0);}</code>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                        
+                    </div>
+                  </div>
+                    
+                </div>
+                <p>The matrix() method combines all the 2D transform methods into one.</p>            
+                <button type="button" class="btn btn-block btn-info" data-toggle="collapse" data-target="#matrix-description">Learn</button>
+                <div id="matrix-description" class="collapse">
+                <p>The parameters are as follow: matrix(scaleX(), skewY(), skewX(),scaleY(), translateX(), translateY())</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!---  3D Transform block  --->
+          <div class="container-fluid"></div>
+            <h2>3D Transforms</h2>
+            
+            <div class="row">
+              <!------  RotateX block  ---------->
+              <div class="container container-3d col-lg-4 col-sm-4 col-xs-12">
+                <h3>The rotateX() Method</h3>
+                <p>The rotateX() method rotates an element around its X-axis at a given degree:</p>
+                <div id="rotateXdiv" class="examplediv">
+                  <p>rotateX<p>
+                </div>
+
+                <!-- Modal button-->
+                <div class="container modal-container">
+                  <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#syntax-rotateX">Syntax</button>
+                   
+                  <!-- Modal -->
+                  <div class="modal fade" id="syntax-rotateX" role="dialog">
+                    <div class="modal-dialog">
+                      
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">RotateX syntax</h4>
+                        </div>
+                        <div class="modal-body">
+                          <code>div {transform: rotateX(150deg);}</code>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                        
+                    </div>
+                  </div>
+                    
+                </div>
+                <p>This div element is rotated 150 degrees.</p>
+              </div>
+
+
+              <!-------  RotateY block  --------->
+              <div class="container container-3d col-lg-4 col-sm-4 col-xs-12">
+                <h3>The rotateY() Method</h3>
+                <p>The rotateY() method rotates an element around its Y-axis at a given degree:</p>
+                <div id="rotateYdiv" class="examplediv">
+                  <p>rotateY<p>
+                </div>
+
+                <!-- Modal button-->
+                <div class="container modal-container">
+                  <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#syntax-rotateY">Syntax</button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="syntax-rotateY" role="dialog">
+                    <div class="modal-dialog">
+                      
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">RotateY syntax</h4>
+                        </div>
+                        <div class="modal-body">
+                          <code>div {transform: rotateY(150deg);}</code>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                        
+                    </div>
+                  </div>
+                    
+                </div>
+                <p>This div element is rotated 150 degrees.</p>
+              </div>
+              
+
+              <!--------  RotateZ block  -------->
+              <div class="container container-3d col-lg-4 col-sm-4 col-xs-12">
+                <h3>The rotateZ() Method</h3>
+                <p>The rotateZ() method rotates an element around its Z-axis at a given degree:</p>
+                <div id="rotateZdiv" class="examplediv">
+                  <p>rotateY<p>
+                </div>
+
+                <!-- Modal button-->
+                <div class="container modal-container">
+                  <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#syntax-rotateZ">Syntax</button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="syntax-rotateZ" role="dialog">
+                    <div class="modal-dialog">
+                      
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">RotateZ syntax</h4>
+                        </div>
+                        <div class="modal-body">
+                          <code>div {transform: rotateZ(90deg);}</code>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                        
+                    </div>
+                  </div>
+                    
+                </div>
+                <p>This div element is rotated 90 degrees.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+
+        <!----------  TRANSITION SECTION  ------------>
+        <section id="transition" class="tab-pane fade">
+          
+          <h1>CSS Transitions</h1>
+
+          <div class="container-fluid flex-transition">
+            <div class="container">
+              <p>CSS transitions allows you to change property values smoothly, over a given duration.</p>
+              <p>Mouse over the element below to see a CSS transition effect:</p>
+
+              <div> <!---  Transition example  --->
+                <div class="animated_div">CSS</div>
+              </div>
+
+              <p>To create a transition effect, you must specify two things:</p>
+              <ul class="container">
+                <li>the CSS property you want to add an effect to</li>
+                <li>the duration of the effect</li>
+              </ul>
+            </div>
+            <img src="http://tecnologiaenvivo.com/wp-content/uploads/2019/05/que-es-css3-y-algunas-de-sus-funcionalidades.jpeg" class="img-responsive img-rounded" id="css3" alt="CSS3 logo">
+          </div>
+
+
+            <table class="table">
+              <thead>
+                <tr class="active">
+                  <th><b>Property</b></th>
+                  <th><b>Description</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="default">
+                  <td>transition</td>
+                  <td>A shorthand property for setting the four transition properties into a single property</td>
+                </tr>
+                <tr class="info">
+                  <td>transition-delay</td>
+                  <td>Specifies a delay (in seconds) for the transition effect</td>
+                </tr>
+                <tr class="deafault">
+                  <td>transition-duration</td>
+                  <td>Specifies how many seconds or milliseconds a transition effect takes to complete</td>
+                </tr>
+                <tr class="info">
+                  <td>transition-property</td>
+                  <td>Specifies the name of the CSS property the transition effect is for</td>
+                </tr>
+                <tr class="default">
+                  <td>transition-timing-function</td>
+                  <td>Specifies the speed curve of the transition effect</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </section>
+
+
+
+
+        <!----------  ANIMATION SECTION  ------------>
+        <section id="animation" class="tab-pane fade">
+
+          <div class="container-fluid">
+            <h1>CSS Animations</h1>
+            <div class="container  flex-content">
+              <div class="row">
+                <div class="container col-lg-6 col-xs-12">
+                  <p>CSS allows animation of HTML elements without using JavaScript or Flash!</p>
+                  <p>An animation lets an element gradually change from one style to another.</p>
+                  <p>To use CSS animation, you must first specify some keyframes for the animation.</p>
+                
+                  <!-- Modal button-->
+                  <div class="container modal-container">
+                  <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#syntax-animation">Syntax</button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="syntax-animation" role="dialog">
+                  <div class="modal-dialog">
+                      
+                    <!---  Modal content  ---->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       <h4 class="modal-title">Animation syntax</h4>
+                      </div>
+                      <div class="modal-body">
+                        <code>
+                          #animation-example {
+                          margin: 1rem 15rem;
+                          animation-name: example;
+                          animation-duration: 15s;
+                          animation-iteration-count: infinite;
+                          animation-direction: alternate-reverse;
+                          }
+                        </code>
+                        <code>
+                          @keyframes example {
+                            from {transform: rotateY(0deg);}
+                            to  {transform: rotateY(360deg);}
+                          }
+                        </code>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+                  </div>
+                  </div>
+                
+                </div>
+                <!------  Animation example  ------->
+                <div id="animation-example" class="container col-lg-6 col-xs-12">
+                  <img src="http://media02.hongkiat.com/thumbs/640x410/keep-css3-markup-slim-facebook.jpg" class="img-responsive img-rounded" id="css3-2" alt="CSS3 logo">
+                </div>
+              </div>
+           
+
+              <div class="container">
+                <h2>The @keyframes Rule</h2>
+                <div class="container">
+                  <p>When you specify CSS styles inside the @keyframes rule, the animation will gradually change from the current style to the new style at certain times.</p>
+                  <p>To get an animation to work, you must bind the animation to an element.</p>
+                </div>
+              </div>
+            
+              <table class="table">
+                <thead>
+                  <tr class="active">
+                    <th><b>Property</b></th>
+                    <th><b>Description</b></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="default">
+                    <td>@keyframes</td>
+                    <td>Specifies the animation code</td>
+                  </tr>
+                  <tr class="info">
+                    <td>animation</td>
+                    <td>A shorthand property for setting all the animation properties</td>
+                  </tr>
+                  <tr class="deafault">
+                    <td>animation-delay</td>
+                    <td>Specifies a delay for the start of an animation</td>
+                  </tr>
+                  <tr class="info">
+                    <td>animation-direction</td>
+                    <td>Specifies whether an animation should be played forwards, backwards or in alternate cycles</td>
+                  </tr>
+                  <tr class="default">
+                    <td>animation-duration</td>
+                    <td>Specifies how long time an animation should take to complete one cycle</td>
+                  </tr>
+                  <tr class="info">
+                    <td>animation-fill-mode</td>
+                    <td>Specifies a style for the element when the animation is not playing (before it starts, after it ends, or both)</td>
+                  </tr>
+                  <tr class="default">
+                    <td>animation-iteration-count</td>
+                    <td>Specifies the number of times an animation should be played</td>
+                  </tr>
+                  <tr class="info">
+                    <td>animation-name</td>
+                    <td>Specifies the name of the @keyframes animation</td>
+                  </tr>
+                  <tr class="default">
+                    <td>animation-play-state</td>
+                    <td>Specifies whether the animation is running or paused</td>
+                  </tr>
+                  <tr class="info">
+                    <td>animation-timing-function</td>
+                    <td>Specifies the speed curve of the animation</td>
+                  </tr>
+                </tbody>
+              </table>
+            
+            </div>
+        </section>
+        
+      </main>
+      <footer>
+        <p>&#169; 2020 Copyright: Richard Seres</p>
+      </footer>
+    </body>
+</html>

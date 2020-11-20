@@ -1,0 +1,354 @@
+/* ---------- CSS advanced ------------ */
+/* Content :                           
+
+  BASE STYLE........................  22
+    Page layout.....................  58
+  HEADER, NAVTAB STYLE & LAYOUT.....  71
+  MAIN CONTENT...................... 121
+    Transform section............... 130
+      Example transfroms square..... 158
+      Modal style & layout.......... 203
+    Transition section.............. 234
+      The transition animation...... 253
+    Animation section............... 298
+      The animation................. 309
+  FOOTER............................ 346
+    
+
+
+*/
+
+
+/*---  BASE STYLE  ---*/
+
+:root {
+  --main-bg-color:   #1786a8;
+  --main-color:      white;
+  --link-color:      white;
+  --btn-bg-color:    #33b5e5;
+  --border-color:    rgb(0, 0, 133);
+  --shadow-color:    grey;
+  --modal-bg-color:  #1786a893;
+}
+
+html,
+body {
+  box-sizing:          border-box;
+  overflow-x:          hidden;
+}
+
+  p {
+    display:           block;
+    margin:            2rem 0;
+  }
+
+  a {
+    text-decoration:   none;
+    color:             var(--link-color);
+  }
+
+  h2 {
+    margin:            2rem 0;
+  }
+
+  h3 {
+    margin-bottom:     4rem;
+  }
+
+/* Page layout */
+.page-container {
+  display: grid;
+  grid-template-areas:
+  "header header header"
+  "main main main"
+  "main main main"
+  "footer footer footer";
+}
+
+
+
+
+/*---  HEADER, NAVTAB STYLE & LAYOUT  ---*/
+
+header {
+  display:            grid;
+  grid-area:          header;
+  background-color:   var(--main-bg-color);
+  color:              var(--main-color);
+  width:              100vw;
+}
+
+  /*  Desktop  */
+  @media (min-width: 768px) {
+    .header-container {
+      display:            flex;
+      flex-direction:     row;
+      justify-content:    space-between;
+    }
+
+      .nav > li > .ize:hover { /* Navtab hover */
+        background-color: var(--btn-bg-color);
+        color:            var(--main-color);
+      }
+
+      .header-container > h4 {
+        order:        2;
+        margin-right: 3rem;
+      }
+  }
+  
+  /*  Mobile */
+  @media (max-width: 768px) {
+    .header-container {
+      display:         flex;
+      flex-direction:  column;
+      justify-content: center;
+      align-items:     center;
+    }
+
+    header > h4 {
+      text-align:      center;
+    }
+
+    .nav {
+      border-bottom:    none;
+    }
+  }
+
+
+
+
+/*---  MAIN CONTENT STYLE ---*/
+main {
+  display:               grid;
+  grid-area:             main;
+  height:                auto;
+  width:                 100vw;
+}
+
+
+  /*--- Transform section ---*/
+  /* Desktop */
+  @media (min-width: 768px){
+    .container-2d, .container-3d {
+      display:            flex;
+      flex-direction:     column;
+      justify-content:    space-around;
+    }
+
+    #btn-learn {
+      margin-top:         6rem;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 768px) {
+    .container-2d, .container-3d {
+      display:            flex;
+      flex-direction:     column;
+      justify-content:    space-around;
+      align-items:        baseline;
+    }
+    
+    #btn-learn {
+      margin-top: 2rem;
+    }
+  }
+
+    /* Example transfroms square */
+    .examplediv { 
+      background-color:  var(--main-bg-color);
+      border:            1px solid var(--border-color);
+      box-shadow:        5px 5px 5px var(--shadow-color);
+      text-align:        center;
+      color:             var(--main-color);
+      width:             10rem;
+      height:            8rem;
+      margin:            0 auto;
+      padding:           3rem 0;
+    }
+
+    #translatediv{
+      transform:         translate(5px,5px);
+    }
+
+    #rotatediv {
+      transform:         rotate(5deg);
+    }
+
+    #scalediv {
+      transform:         scale(1,1.5);
+    }
+
+    #skewdiv {
+      transform:         skew(10deg,10deg);
+    }
+
+    #matrixdiv {
+      transform:         matrix(1, -0.3, 0, 1, 0, 0);
+    }
+
+    #rotateXdiv {
+      transform:         rotateX(150deg);
+    }
+
+    #rotateYdiv {
+      transform:         rotateY(150deg);
+    }
+
+    .btn-info {
+      margin:            4rem 0;
+    }
+  
+    /* Modal style & layout */
+    .modal-container {
+      display:           flex;
+      flex-direction:    row;
+      justify-content:   center;
+      width:             20%;
+    }
+
+    .modal-content { 
+      background-color:  var(--modal-bg-color);
+      color:             var(--main-color);
+      text-align:        center;
+    }
+
+      .close {
+        color:           var(--main-color);
+        text-align:      center;
+      }
+
+      code {
+        background-color: var(--main-color);
+        color:            var(--main-bg-color);
+      }
+    
+      .modal-footer > button {
+        margin:           0 auto;
+      }
+  
+
+
+
+/*--- Transition section ---*/
+
+/* Desktop */
+
+@media (min-width: 768px){
+  .flex-transition {
+    display:                flex;
+    flex-direction:         row;
+    justify-content:        center;
+    align-items:            center;
+    position:               relative;
+  }
+
+  .flex-transition > #css3 {
+    position:               absolute;
+    left:                   70rem;
+    max-height:             200px;
+  }
+}
+  /* The transition animation */
+  .animated_div {
+    background-color:       var(--main-bg-color);
+    border:                 2px solid var(--main-bg-color);
+    border-radius:          5px;
+    color:                  var(--main-color);
+    width:                  8rem;
+    height:                 8rem;
+    text-align:             center;
+    padding:                2.5rem 0;
+    margin:                 1rem 0;
+    transition:
+      width 1.5s,
+      font-size 1.5s,
+      tranform 1.5s,
+      background-color 1.5s,
+      color 1.5s;
+  }
+
+    .animated_div:hover {
+      background-color:           var(--main-color);
+      color:                      var(--main-bg-color);
+      font-size:                  2rem;
+      font-weight:                bold;
+      width:                      48%;
+      transition-timing-function: ease-in-out;
+    }
+
+/* Mobile */    
+@media (max-width: 768px) {
+  .animated_div:hover {
+    width:                        100%;
+  }
+}
+  li {
+    list-style-type:              square;
+  }
+
+  table {
+    margin:                       2rem 0;
+  }
+
+
+
+
+/*--- Animation section ---*/
+
+/* Desktop */
+@media (min-width: 768px) {
+  .flex-content {
+    display:                      flex;
+    flex-direction:               column;
+    justify-content:              flex-start;
+    align-items: center;
+  }
+
+} /* The animation */
+  #animation-example > #css3-2 {
+    box-shadow:                   5px 5px 5px var(--shadow-color);
+    width:                        22rem; 
+  }
+
+  #animation-example {
+    animation-name:               example;
+    animation-duration:           15s;
+    animation-timing-function:    linear;
+    animation-iteration-count:    infinite;
+    animation-direction:          alternate-reverse;
+  }
+
+    @keyframes example {
+      from {transform: rotateX(0deg);}
+      to  {transform: rotateX(360deg);}
+    }
+
+/* Mobile */
+@media (max-width: 768px) {
+  #animation-example > #css3-2 {
+    margin:                       3rem;
+  }
+  
+  .flex-content {
+    display:                      flex;
+    flex-direction:               column;
+    justify-content:              center;
+    align-items: center;
+
+  }
+}
+
+
+
+
+/*--- FOOTER ---*/
+footer {
+  display:                      grid;
+  grid-area:                    footer;
+  background-color:             var(--main-bg-color);
+  color:                        var(--main-color);
+  line-height:                  1rem;
+  text-align:                   center;
+}
