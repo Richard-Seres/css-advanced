@@ -37,19 +37,11 @@ body {
   overflow-x:          hidden;
 }
 
-  p {
-    display:           block;
-    margin:            2rem 0;
-  }
-
   a {
     text-decoration:   none;
     color:             var(--link-color);
   }
 
-  h2 {
-    margin:            2rem 0;
-  }
 
   h3 {
     margin-bottom:     4rem;
@@ -102,16 +94,7 @@ header {
     .header-container {
       display:         flex;
       flex-direction:  column;
-      justify-content: center;
       align-items:     center;
-    }
-
-    header > h4 {
-      text-align:      center;
-    }
-
-    .nav {
-      border-bottom:    none;
     }
   }
 
@@ -133,11 +116,7 @@ main {
     .container-2d, .container-3d {
       display:            flex;
       flex-direction:     column;
-      justify-content:    space-around;
-    }
-
-    #btn-learn {
-      margin-top:         6rem;
+      align-items:        center;
     }
   }
   
@@ -146,12 +125,7 @@ main {
     .container-2d, .container-3d {
       display:            flex;
       flex-direction:     column;
-      justify-content:    space-around;
-      align-items:        baseline;
-    }
-    
-    #btn-learn {
-      margin-top: 2rem;
+      align-items:        center;
     }
   }
 
@@ -164,7 +138,6 @@ main {
       color:             var(--main-color);
       width:             10rem;
       height:            8rem;
-      margin:            0 auto;
       padding:           3rem 0;
     }
 
@@ -219,9 +192,18 @@ main {
         text-align:      center;
       }
 
-      code {
+      pre {
         background-color: var(--main-color);
         color:            var(--main-bg-color);
+        text-align:       left;
+        white-space:      pre-line;
+        height:           auto;
+        overflow-y:       auto;
+      }
+
+      #ani-pre {
+        height:           60vh;
+        overflow-y:       auto;
       }
     
       .modal-footer > button {
@@ -233,23 +215,6 @@ main {
 
 /*--- Transition section ---*/
 
-/* Desktop */
-
-@media (min-width: 768px){
-  .flex-transition {
-    display:                flex;
-    flex-direction:         row;
-    justify-content:        center;
-    align-items:            center;
-    position:               relative;
-  }
-
-  .flex-transition > #css3 {
-    position:               absolute;
-    left:                   70rem;
-    max-height:             200px;
-  }
-}
   /* The transition animation */
   .animated_div {
     background-color:       var(--main-bg-color);
@@ -260,7 +225,7 @@ main {
     height:                 8rem;
     text-align:             center;
     padding:                2.5rem 0;
-    margin:                 1rem 0;
+    margin:                 2rem 0;
     transition:
       width 1.5s,
       font-size 1.5s,
@@ -274,7 +239,7 @@ main {
       color:                      var(--main-bg-color);
       font-size:                  2rem;
       font-weight:                bold;
-      width:                      48%;
+      width:                      68%;
       transition-timing-function: ease-in-out;
     }
 
@@ -306,42 +271,6 @@ main {
     align-items: center;
   }
 
-} /* The animation */
-  #animation-example > #css3-2 {
-    box-shadow:                   5px 5px 5px var(--shadow-color);
-    width:                        22rem; 
-  }
-
-  #animation-example {
-    animation-name:               example;
-    animation-duration:           15s;
-    animation-timing-function:    linear;
-    animation-iteration-count:    infinite;
-    animation-direction:          alternate-reverse;
-  }
-
-    @keyframes example {
-      from {transform: rotateX(0deg);}
-      to  {transform: rotateX(360deg);}
-    }
-
-/* Mobile */
-@media (max-width: 768px) {
-  #animation-example > #css3-2 {
-    margin:                       3rem;
-  }
-  
-  .flex-content {
-    display:                      flex;
-    flex-direction:               column;
-    justify-content:              center;
-    align-items: center;
-
-  }
-}
-
-
-
 
 /*--- FOOTER ---*/
 footer {
@@ -349,6 +278,6 @@ footer {
   grid-area:                    footer;
   background-color:             var(--main-bg-color);
   color:                        var(--main-color);
-  line-height:                  1rem;
+  line-height:                  2.5rem;
   text-align:                   center;
 }
